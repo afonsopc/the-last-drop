@@ -13,8 +13,8 @@ config_version=5
 config/name="mega cool game"
 run/main_scene="uid://buu6xyy6ofv3r"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-boot_splash/image="uid://b26uxmqcsmysp"
-config/icon="uid://c5nncp6hhhnee"
+boot_splash/image="uid://celnmstbvwq60"
+config/icon="uid://gfpdyo3wvull"
 
 [display]
 
