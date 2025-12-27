@@ -1,0 +1,111 @@
+[gd_scene load_steps=11 format=3 uid="uid://buu6xyy6ofv3r"]
+
+[ext_resource type="Script" uid="uid://kdwuoown62yi" path="res://menu.gd" id="1_lti8b"]
+[ext_resource type="Texture2D" uid="uid://c37vhuh2rr27c" path="res://assets/favicon.png" id="2_4hy44"]
+[ext_resource type="PackedScene" uid="uid://t7oqfek6xbl1" path="res://gas_station.tscn" id="2_ouk20"]
+[ext_resource type="PackedScene" uid="uid://bljp1avuhmyj8" path="res://assets/Characters_psx/Models/Killers/Character_Killer.fbx" id="3_mae5d"]
+
+[sub_resource type="Environment" id="Environment_vsb4k"]
+background_mode = 1
+
+[sub_resource type="Theme" id="Theme_vsb4k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytr4m"]
+albedo_texture = ExtResource("2_4hy44")
+uv1_scale = Vector3(1.4, 1.4, 1.4)
+uv1_offset = Vector3(-2.78, -6.48, -0.48)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_l48gv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ecwwl"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lti8b"]
+font_size = 33
+font_color = Color(0.7714362, 0.6645791, 0, 1)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_lti8b")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.99929345, 0, 0.037585467, 0, 1, 0, -0.037585467, 0, 0.99929345, -5.323097, 2.8747003, 12.015767)
+current = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vsb4k")
+
+[node name="StartButton" type="MenuButton" parent="."]
+offset_left = 194.0
+offset_top = 134.0
+offset_right = 301.0
+offset_bottom = 201.0
+theme = SubResource("Theme_vsb4k")
+text = "Start Game"
+flat = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StartButton"]
+transform = Transform3D(0.23, 0, 0, 0, 2.45, 0, 0, 0, 2.49, -9.723383, 8.7741785, 16.517593)
+material_override = SubResource("StandardMaterial3D_ytr4m")
+mesh = SubResource("BoxMesh_l48gv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StartButton"]
+transform = Transform3D(0.23, 0, 0, 0, 0.4080763, 0, 0, 0, 2.49, -9.722177, 9.816882, 16.517593)
+material_override = SubResource("StandardMaterial3D_ecwwl")
+mesh = SubResource("BoxMesh_l48gv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="StartButton"]
+transform = Transform3D(0.23, 0, 0, 0, 0.4080763, 0, 0, 0, 2.49, -9.722177, 7.716069, 16.517593)
+material_override = SubResource("StandardMaterial3D_ecwwl")
+mesh = SubResource("BoxMesh_l48gv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="StartButton"]
+transform = Transform3D(0.22999997, 0, 0, 0, -0.0053415415, 2.4897866, 0, -0.4080413, -0.032593016, -9.722177, 8.753873, 17.601688)
+material_override = SubResource("StandardMaterial3D_ecwwl")
+mesh = SubResource("BoxMesh_l48gv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="StartButton"]
+transform = Transform3D(0.22999997, 0, 0, 0, -0.0053415415, 2.4897866, 0, -0.4080413, -0.032593016, -9.722177, 8.753873, 15.455593)
+material_override = SubResource("StandardMaterial3D_ecwwl")
+mesh = SubResource("BoxMesh_l48gv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StartButton/MeshInstance3D4"]
+transform = Transform3D(0.23, 0, 0, 0, 2.45, 0, 0, 0, 2.49, -9.723383, 8.7741785, 16.517593)
+material_override = SubResource("StandardMaterial3D_ytr4m")
+mesh = SubResource("BoxMesh_l48gv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StartButton/MeshInstance3D4"]
+transform = Transform3D(0.23, 0, 0, 0, 0.4080763, 0, 0, 0, 2.49, -9.722177, 9.816882, 16.517593)
+material_override = SubResource("StandardMaterial3D_ecwwl")
+mesh = SubResource("BoxMesh_l48gv")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="StartButton/MeshInstance3D4"]
+transform = Transform3D(0.23, 0, 0, 0, 0.4080763, 0, 0, 0, 2.49, -9.722177, 7.716069, 16.517593)
+material_override = SubResource("StandardMaterial3D_ecwwl")
+mesh = SubResource("BoxMesh_l48gv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="StartButton/MeshInstance3D4"]
+transform = Transform3D(0.22999997, 0, 0, 0, -0.0053415415, 2.4897866, 0, -0.4080413, -0.032593016, -9.722177, 8.753873, 17.601688)
+material_override = SubResource("StandardMaterial3D_ecwwl")
+mesh = SubResource("BoxMesh_l48gv")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="StartButton/MeshInstance3D4"]
+transform = Transform3D(0.22999997, 0, 0, 0, -0.0053415415, 2.4897866, 0, -0.4080413, -0.032593016, -9.722177, 8.753873, 15.455593)
+material_override = SubResource("StandardMaterial3D_ecwwl")
+mesh = SubResource("BoxMesh_l48gv")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 123.0
+offset_top = 41.0
+offset_right = 374.0
+offset_bottom = 87.0
+text = "The Last Drop™"
+label_settings = SubResource("LabelSettings_lti8b")
+
+[node name="GasStation" parent="." instance=ExtResource("2_ouk20")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3280537, -1.7457299, -10.434918)
+
+[node name="Character_Killer" parent="." instance=ExtResource("3_mae5d")]
+transform = Transform3D(0.66, 0, 0, 0, 0.66, 0, 0, 0, 0.66, 2.7085738, -1.9515073, -18.949352)
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://8sonsv52wcdn"]
+
+[ext_resource type="PackedScene" uid="uid://cm5x27wuiakow" path="res://Bus_stop/Models/Props/Props.fbx" id="1_hfh05"]
+
+[node name="Props" instance=ExtResource("1_hfh05")]

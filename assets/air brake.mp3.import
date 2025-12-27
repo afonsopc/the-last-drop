@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://x1btdokxx2fw"
+path="res://.godot/imported/air brake.mp3-21f2958b409594f1306573aa5033ca31.mp3str"
+
+[deps]
+
+source_file="res://assets/air brake.mp3"
+dest_files=["res://.godot/imported/air brake.mp3-21f2958b409594f1306573aa5033ca31.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

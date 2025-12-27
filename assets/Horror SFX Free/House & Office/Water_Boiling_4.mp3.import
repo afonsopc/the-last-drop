@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b6y3lmd32y4ye"
+path="res://.godot/imported/Water_Boiling_4.mp3-39979ecc6189eff81b9445d4cc6f5849.mp3str"
+
+[deps]
+
+source_file="res://assets/Horror SFX Free/House & Office/Water_Boiling_4.mp3"
+dest_files=["res://.godot/imported/Water_Boiling_4.mp3-39979ecc6189eff81b9445d4cc6f5849.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ytuhuym84pbe"]
+
+[ext_resource type="PackedScene" uid="uid://cv5chov22ciyy" path="res://assets/Characters_psx/Models/Male/Character_03.fbx" id="1_qq5rr"]
+
+[node name="Character_03" instance=ExtResource("1_qq5rr")]
+
+[node name="Skeleton3D" parent="." index="0"]
+bones/23/rotation = Quaternion(-0.01, -0.008, -0.031, 0.031)
+bones/24/rotation = Quaternion(-0.259, 0, -0.53, 1)
+bones/28/rotation = Quaternion(0.01, 0.008, -0.041, 0.032)
+bones/29/rotation = Quaternion(0.269, 0, -0.477, 1)
