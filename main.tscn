@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://5qrqcwn4ucuv"]
+[gd_scene load_steps=33 format=3 uid="uid://5qrqcwn4ucuv"]
 
 [ext_resource type="PackedScene" uid="uid://4wysvda1qlk5" path="res://assets/Characters_psx/Models/Female/Character_17_Female_Police.fbx" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://bgqukbj8rkr4e" path="res://main.gd" id="1_5vw27"]
@@ -24,6 +24,10 @@
 [sub_resource type="LabelSettings" id="LabelSettings_efxa6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dg77c"]
+font_size = 40
+font_color = Color(0.6313726, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vivmo"]
 font_size = 40
 
 [sub_resource type="Theme" id="Theme_2cqfq"]
@@ -189,47 +193,46 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "The End"
-label_settings = SubResource("LabelSettings_dg77c")
+label_settings = SubResource("LabelSettings_vivmo")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Menu" type="ColorRect" parent="Player/UI"]
 visible = false
 z_index = 10
-offset_left = -12.0
-offset_top = -10.0
 offset_right = 480.0
-offset_bottom = 325.0
+offset_bottom = 320.0
 color = Color(0, 0, 0, 0.4862745)
 
 [node name="BackToMenu" type="MenuButton" parent="Player/UI/Menu"]
 layout_mode = 0
-offset_left = 269.0
-offset_top = 195.0
-offset_right = 435.0
-offset_bottom = 262.0
+offset_left = 256.0
+offset_top = 192.0
+offset_right = 422.0
+offset_bottom = 259.0
 theme = SubResource("Theme_2cqfq")
 text = "Back to the Menu"
 flat = false
 
 [node name="ResumeGame" type="MenuButton" parent="Player/UI/Menu"]
 layout_mode = 0
-offset_left = 68.0
-offset_top = 197.0
-offset_right = 213.0
-offset_bottom = 264.0
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 209.0
+offset_bottom = 259.0
 theme = SubResource("Theme_2cqfq")
 text = "Resume"
 flat = false
 
 [node name="Label2" type="Label" parent="Player/UI/Menu"]
 layout_mode = 0
-offset_left = 123.0
-offset_top = 98.0
-offset_right = 374.0
-offset_bottom = 144.0
+offset_left = 128.0
+offset_top = 100.0
+offset_right = 379.0
+offset_bottom = 146.0
 text = "The Last Drop™"
 label_settings = SubResource("LabelSettings_w48qg")
+horizontal_alignment = 1
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(3.68, 0, 0, 0, 3.68, 0, 0, 0, 3.68, 0, 0, 0)
@@ -264,10 +267,6 @@ transform = Transform3D(2.99, 0, 0, 0, 2.99, 0, 0, 0, 2.99, -1.3871765, 1.181303
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bus/BusArea"]
 transform = Transform3D(3.15, 0, 0, 0, 3.15, 0, 0, 0, 3.15, 0, 0, 0)
 shape = SubResource("BoxShape3D_efxa6")
-
-[node name="CutsceneTimer" type="Timer" parent="."]
-wait_time = 40.0
-one_shot = true
 
 [node name="PeeArea" type="Area3D" parent="."]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 24.149576, 1.1813034, -16.029585)

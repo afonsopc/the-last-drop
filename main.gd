@@ -16,9 +16,9 @@ func run_cutscene() -> void:
 	await get_tree().create_timer(5.0, false).timeout
 	player.hideMessage("intro")
 	await get_tree().create_timer(2.5, false).timeout
-	player.showMessage("intro", "Hello? Driver?")
+	player.showMessage("intro", "You: Hello? Driver?")
 	await get_tree().create_timer(2.0, false).timeout
-	player.showMessage("intro2", "Can we stop at the next restroom?")
+	player.showMessage("intro2", "You: Can we stop at the next restroom?")
 	await get_tree().create_timer(5.0, false).timeout
 	player.hideMessage("intro")
 	player.hideMessage("intro2")
@@ -30,7 +30,7 @@ func run_cutscene() -> void:
 	player.hideMessage("intro2")
 	player.hideMessage("intro")
 	await get_tree().create_timer(3.0, false).timeout
-	player.showMessage("intro", "Ok, thanks!")
+	player.showMessage("intro", "You: Ok, thanks!")
 	await get_tree().create_timer(3.0, false).timeout
 	player.hideMessage("intro")
 	await get_tree().create_timer(1.0, false).timeout

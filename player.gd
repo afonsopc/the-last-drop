@@ -13,7 +13,6 @@ const MOUSE_SENSITIVITY = 0.1
 @onready var game_over_label = $UI/GameOverLabel
 @onready var message_label = $UI/MessageLabel
 @onready var game_over_background = $UI/GameOverBackground
-@onready var game_over_timer = $GameOverTimer
 @onready var the_end_label = $UI/TheEndLabel
 @onready var menu = $UI/Menu
 
@@ -21,7 +20,7 @@ var rotation_x = 0.0
 var rotation_y := 0.0
 var can_move := true
 var can_look := true
-var started_footsteps_sound := false
+var footsteps_playing := true
 var in_pee_area := false
 var in_hand_wash_area := false
 var in_bathroom_exit_area := false
@@ -38,6 +37,21 @@ var paused := false
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	menu.process_mode = Node.PROCESS_MODE_ALWAYS
+	begin_footsteps()
+
+func begin_footsteps():
+	var prev_max_volume = footsteps_sound.max_db
+	footsteps_sound.max_db = -1000.0
+	await get_tree().create_timer(0.1).timeout
+	footsteps_sound.play()
+	await get_tree().create_timer(0.1).timeout
+	footsteps_sound.max_db = prev_max_volume
+	footsteps_sound.stream_paused = true
+
+func _notification(what):
+	if what == NOTIFICATION_WM_WINDOW_FOCUS_OUT:
+		if not paused:
+			toggle_pause()
 
 func _input(event):
 	if event is InputEventKey:
@@ -94,12 +108,14 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
-	var is_moving := velocity.length() > 0.1
 
-	if not started_footsteps_sound:
-		footsteps_sound.play()
-		started_footsteps_sound = true
-	footsteps_sound.stream_paused = not (is_on_floor() and is_moving and can_move)
+	var is_moving := velocity.length() > 0.1
+	var should_play_footsteps = is_on_floor() and is_moving and can_move
+
+	if should_play_footsteps != footsteps_playing:
+		footsteps_sound.stream_paused = not should_play_footsteps
+		footsteps_playing = should_play_footsteps
+
 	move_and_slide()
 
 func handle_mouse_motion(event: InputEventMouseMotion) -> void:
@@ -187,7 +203,10 @@ func _on_station_area_body_entered(body: Node3D) -> void:
 
 func run_end_cutscene() -> void:
 	get_tree().current_scene.start_cutscene()
-	await get_tree().create_timer(15.0).timeout
+	showMessage("final_thanks", "Thank you Mr Driver, I feel much better now.")
+	await get_tree().create_timer(5.0).timeout
+	hideMessage("final_thanks")
+	await get_tree().create_timer(10.0).timeout
 	game_over_background.modulate.a = 0.0
 	game_over_background.visible = true
 	var tween = create_tween()
@@ -245,8 +264,9 @@ func game_over(reason: String) -> void:
 	showMessage("game_over", reason)
 	game_over_label.visible = true
 	can_move = false
-	game_over_timer.start()
-	game_over_timer.timeout.connect(go_to_menu)
+	can_look = false
+	await get_tree().create_timer(5.0).timeout
+	go_to_menu()
 
 func go_to_menu() -> void:
 	get_tree().change_scene_to_file("res://menu.tscn")
