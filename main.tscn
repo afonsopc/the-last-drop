@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://5qrqcwn4ucuv"]
+[gd_scene format=3 uid="uid://5qrqcwn4ucuv"]
 
 [ext_resource type="PackedScene" uid="uid://4wysvda1qlk5" path="res://assets/Characters_psx/Models/Female/Character_17_Female_Police.fbx" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://bgqukbj8rkr4e" path="res://main.gd" id="1_5vw27"]
@@ -69,70 +69,70 @@ material = SubResource("StandardMaterial3D_ycdy4")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vivmo"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node3D" unique_id=1187715729]
 script = ExtResource("1_5vw27")
 
-[node name="NPC 1" type="CharacterBody3D" parent="."]
+[node name="NPC 1" type="CharacterBody3D" parent="." unique_id=1393677812]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5043812, 0.21440339, -2.114583)
 script = ExtResource("1_h2yge")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC 1"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC 1" unique_id=1990259292]
 transform = Transform3D(0.68, 0, 0, 0, 0.68, 0, 0, 0, 0.68, 0, 0.75, 0)
 shape = SubResource("CapsuleShape3D_0xm2m")
 
-[node name="Character_17_Female_Police" parent="NPC 1" instance=ExtResource("1_0xm2m")]
+[node name="Character_17_Female_Police" parent="NPC 1" unique_id=569964632 instance=ExtResource("1_0xm2m")]
 transform = Transform3D(0.26588002, 0, 0, 0, 0.26588002, 0, 0, 0, 0.26588002, 0.03894055, 0.24221116, 0.17336154)
 
-[node name="Player" type="CharacterBody3D" parent="."]
+[node name="Player" type="CharacterBody3D" parent="." unique_id=1455868495]
 transform = Transform3D(1.28, 0, 0, 0, 1.28, 0, 0, 0, 1.28, 238.00815, 1.8023502, 24.138357)
 script = ExtResource("1_ig7tw")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=460334089]
 transform = Transform3D(0.68, 0, 0, 0, 0.68, 0, 0, 0, 0.68, 0, 0.75, 0)
 shape = SubResource("CapsuleShape3D_lquwl")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=1552696885]
 transform = Transform3D(0.68, 0, 0, 0, 0.68, 0, 0, 0, 0.68, 0, 0.75, 0)
 mesh = SubResource("CapsuleMesh_1bvp3")
 
-[node name="Camera Pivot" type="Node3D" parent="Player"]
+[node name="Camera Pivot" type="Node3D" parent="Player" unique_id=1520821906]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3682578, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Player/Camera Pivot"]
+[node name="Camera3D" type="Camera3D" parent="Player/Camera Pivot" unique_id=484523341]
 
-[node name="AudioListener3D" type="AudioListener3D" parent="Player"]
+[node name="AudioListener3D" type="AudioListener3D" parent="Player" unique_id=1918822191]
 current = true
 
-[node name="HandWashingSound" type="AudioStreamPlayer3D" parent="Player"]
+[node name="HandWashingSound" type="AudioStreamPlayer3D" parent="Player" unique_id=770424417]
 transform = Transform3D(0.78125, 0, 0, 0, 0.78125, 0, 0, 0, 0.78125, 0, 0, 0)
 stream = ExtResource("5_ycdy4")
 volume_db = -6.175
 pitch_scale = 2.0
 
-[node name="AirBrakeSound" type="AudioStreamPlayer3D" parent="Player"]
+[node name="AirBrakeSound" type="AudioStreamPlayer3D" parent="Player" unique_id=2135766580]
 transform = Transform3D(0.78125, 0, 0, 0, 0.78125, 0, 0, 0, 0.78125, 0, 0, 0)
 stream = ExtResource("6_ycdy4")
 volume_db = -6.175
 pitch_scale = 0.82
 
-[node name="PeeSound" type="AudioStreamPlayer3D" parent="Player"]
+[node name="PeeSound" type="AudioStreamPlayer3D" parent="Player" unique_id=872284981]
 transform = Transform3D(0.78125, 0, 0, 0, 0.78125, 0, 0, 0, 0.78125, 0, 0, 0)
 stream = ExtResource("7_vivmo")
 volume_db = -6.175
 pitch_scale = 0.82
 
-[node name="BackgroundSound" type="AudioStreamPlayer3D" parent="Player"]
+[node name="BackgroundSound" type="AudioStreamPlayer3D" parent="Player" unique_id=1333927101]
 transform = Transform3D(0.78125, 0, 0, 0, 0.78125, 0, 0, 0, 0.78125, 0, 0, 0)
 stream = ExtResource("7_w48qg")
 
-[node name="FootstepsSound" type="AudioStreamPlayer3D" parent="Player"]
+[node name="FootstepsSound" type="AudioStreamPlayer3D" parent="Player" unique_id=2086342069]
 stream = ExtResource("5_efxa6")
 volume_db = -6.175
 pitch_scale = 0.82
 
-[node name="UI" type="CanvasLayer" parent="Player"]
+[node name="UI" type="CanvasLayer" parent="Player" unique_id=73698382]
 
-[node name="GameOverBackground" type="ColorRect" parent="Player/UI"]
+[node name="GameOverBackground" type="ColorRect" parent="Player/UI" unique_id=206010082]
 visible = false
 offset_left = -6.0
 offset_top = -5.0
@@ -140,7 +140,7 @@ offset_right = 486.0
 offset_bottom = 330.0
 color = Color(0, 0, 0, 1)
 
-[node name="MessageLabel" type="Label" parent="Player/UI"]
+[node name="MessageLabel" type="Label" parent="Player/UI" unique_id=1833614664]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -159,7 +159,7 @@ label_settings = SubResource("LabelSettings_efxa6")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GameOverLabel" type="Label" parent="Player/UI"]
+[node name="GameOverLabel" type="Label" parent="Player/UI" unique_id=113152853]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -178,7 +178,7 @@ label_settings = SubResource("LabelSettings_dg77c")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TheEndLabel" type="Label" parent="Player/UI"]
+[node name="TheEndLabel" type="Label" parent="Player/UI" unique_id=685948979]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -197,14 +197,13 @@ label_settings = SubResource("LabelSettings_vivmo")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Menu" type="ColorRect" parent="Player/UI"]
-visible = false
+[node name="Menu" type="ColorRect" parent="Player/UI" unique_id=278292868]
 z_index = 10
 offset_right = 480.0
 offset_bottom = 320.0
 color = Color(0, 0, 0, 0.4862745)
 
-[node name="BackToMenu" type="MenuButton" parent="Player/UI/Menu"]
+[node name="BackToMenu" type="MenuButton" parent="Player/UI/Menu" unique_id=1690098128]
 layout_mode = 0
 offset_left = 256.0
 offset_top = 192.0
@@ -214,7 +213,7 @@ theme = SubResource("Theme_2cqfq")
 text = "Back to the Menu"
 flat = false
 
-[node name="ResumeGame" type="MenuButton" parent="Player/UI/Menu"]
+[node name="ResumeGame" type="MenuButton" parent="Player/UI/Menu" unique_id=1568810462]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 192.0
@@ -224,116 +223,137 @@ theme = SubResource("Theme_2cqfq")
 text = "Resume"
 flat = false
 
-[node name="Label2" type="Label" parent="Player/UI/Menu"]
+[node name="Title" type="Label" parent="Player/UI/Menu" unique_id=1275022949]
 layout_mode = 0
-offset_left = 128.0
-offset_top = 100.0
-offset_right = 379.0
-offset_bottom = 146.0
+offset_left = 130.0
+offset_top = 50.0
+offset_right = 377.0
+offset_bottom = 96.0
 text = "The Last Drop™"
 label_settings = SubResource("LabelSettings_w48qg")
 horizontal_alignment = 1
 
-[node name="Ground" type="StaticBody3D" parent="."]
+[node name="SensitivitySlider" type="HSlider" parent="Player/UI/Menu" unique_id=589085412]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 150.0
+offset_right = 340.0
+offset_bottom = 170.0
+min_value = 0.1
+max_value = 0.5
+step = 0.1
+value = 0.1
+
+[node name="SensitivityLabel" type="Label" parent="Player/UI/Menu" unique_id=574722485]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 122.0
+offset_right = 340.0
+offset_bottom = 146.0
+text = "Sensibility"
+horizontal_alignment = 1
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=2016327997]
 transform = Transform3D(3.68, 0, 0, 0, 3.68, 0, 0, 0, 3.68, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1091391133]
 material_override = SubResource("StandardMaterial3D_lquwl")
 mesh = SubResource("PlaneMesh_0xm2m")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1177276982]
 shape = SubResource("BoxShape3D_h2yge")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1967997634]
 transform = Transform3D(1, 0, 0, 0, 0.6293204, 0.777146, 0, -0.777146, 0.6293204, 0.014373779, 6.6106787, 6.44545)
 visible = false
-light_energy = 0.103
+light_energy = 7.341
 shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1753433907]
 environment = SubResource("Environment_0xm2m")
 
-[node name="GasStation" parent="." instance=ExtResource("5_lquwl")]
+[node name="GasStation" parent="." unique_id=292741899 instance=ExtResource("5_lquwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007590294, 0.068228245, 0.0003657341)
 
-[node name="Bus" parent="." instance=ExtResource("7_272bh")]
+[node name="Bus" parent="." unique_id=904903702 instance=ExtResource("7_272bh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 249.89456, -0.32965946, 24.08228)
 script = ExtResource("9_kek77")
 
-[node name="BusArea" type="Area3D" parent="Bus"]
+[node name="BusArea" type="Area3D" parent="Bus" unique_id=1910053701]
 transform = Transform3D(2.99, 0, 0, 0, 2.99, 0, 0, 0, 2.99, -1.3871765, 1.1813034, 0.32333183)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bus/BusArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bus/BusArea" unique_id=176097311]
 transform = Transform3D(3.15, 0, 0, 0, 3.15, 0, 0, 0, 3.15, 0, 0, 0)
 shape = SubResource("BoxShape3D_efxa6")
 
-[node name="PeeArea" type="Area3D" parent="."]
+[node name="PeeArea" type="Area3D" parent="." unique_id=865875130]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 24.149576, 1.1813034, -16.029585)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PeeArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PeeArea" unique_id=1063944154]
 transform = Transform3D(3.15, 0, 0, 0, 3.15, 0, 0, 0, 3.15, 0, 0, 0)
 shape = SubResource("BoxShape3D_efxa6")
 
-[node name="BathroomExitArea" type="Area3D" parent="."]
+[node name="BathroomExitArea" type="Area3D" parent="." unique_id=2101938374]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.92627, 1.1813034, -20.454967)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BathroomExitArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BathroomExitArea" unique_id=281948761]
 transform = Transform3D(1.18, 0, 0, 0, 1.18, 0, 0, 0, 1.18, 1.1460781, 0, -0.10267258)
 shape = SubResource("BoxShape3D_efxa6")
 
-[node name="StationArea" type="Area3D" parent="."]
+[node name="StationArea" type="Area3D" parent="." unique_id=590985973]
 transform = Transform3D(20.11, 0, 0, 0, 20.11, 0, 0, 0, 20.11, -13.057559, 1.1813034, -9.651184)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StationArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StationArea" unique_id=803179129]
 transform = Transform3D(1.18, 0, 0, 0, 1.18, 0, 0, 0, 1.18, 1.1460781, 0, -0.10267258)
 shape = SubResource("BoxShape3D_efxa6")
 
-[node name="HandWashArea" type="Area3D" parent="."]
+[node name="HandWashArea" type="Area3D" parent="." unique_id=121705236]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.609573, 1.1813034, -15.727531)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HandWashArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HandWashArea" unique_id=757429747]
 transform = Transform3D(3.15, 0, 0, 0, 3.15, 0, 0, 0, 3.15, 0, 0, 0)
 shape = SubResource("BoxShape3D_efxa6")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1824267862]
 transform = Transform3D(1.51, 0, 0, 0, 29.35, 0, 0, 0, 95.47, 35.936134, 9.804679, -0.1904583)
 mesh = SubResource("BoxMesh_w48qg")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3" unique_id=473300609]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D" unique_id=1267853647]
 shape = SubResource("ConcavePolygonShape3D_vivmo")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1463401719]
 transform = Transform3D(1.51, 0, 0, 0, 29.35, 0, 0, 0, 95.47, -21.984505, 9.804679, -0.1904583)
 mesh = SubResource("BoxMesh_w48qg")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D5"]
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D5" unique_id=950061465]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D5/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D5/StaticBody3D" unique_id=1488998941]
 shape = SubResource("ConcavePolygonShape3D_vivmo")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=854761979]
 transform = Transform3D(0.00013180822, 0, 95.47, 0, 29.350004, 0, -1.51, 0, 0.008334637, 10.748295, 9.804679, -47.808968)
 mesh = SubResource("BoxMesh_w48qg")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D4" unique_id=2141107488]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D" unique_id=726537917]
 shape = SubResource("ConcavePolygonShape3D_vivmo")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1038446559]
 transform = Transform3D(-0.006114134, 0, 99.999176, 0, 38.49, 0, -1.5099876, 0, -0.40490952, 7.7289543, 9.804679, 40.98291)
 mesh = SubResource("BoxMesh_w48qg")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=1763608909]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=1948750535]
 shape = SubResource("ConcavePolygonShape3D_vivmo")
 
 [connection signal="pressed" from="Player/UI/Menu/BackToMenu" to="Player" method="_on_back_to_menu_pressed"]
 [connection signal="pressed" from="Player/UI/Menu/ResumeGame" to="Player" method="_on_resume_game_pressed"]
+[connection signal="value_changed" from="Player/UI/Menu/SensitivitySlider" to="Player" method="_on_sensitivity_slider_value_changed"]
 [connection signal="body_entered" from="Bus/BusArea" to="Player" method="_on_bus_area_body_entered"]
 [connection signal="body_exited" from="Bus/BusArea" to="Player" method="_on_bus_area_body_exited"]
 [connection signal="body_entered" from="PeeArea" to="Player" method="_on_pee_area_body_entered"]
