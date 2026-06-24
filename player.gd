@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 const BASE_SPEED = 3.3
 const JUMP_VELOCITY = 4.5
-const MOUSE_SENSITIVITY = 0.1
+const SPRINT_MULTIPLIER = 1.8
 
 @onready var footsteps_sound = $FootstepsSound
 @onready var background_sound = $BackgroundSound
@@ -15,6 +15,7 @@ const MOUSE_SENSITIVITY = 0.1
 @onready var game_over_background = $UI/GameOverBackground
 @onready var the_end_label = $UI/TheEndLabel
 @onready var menu = $UI/Menu
+@onready var sensitivity_slider = $UI/Menu/SensitivitySlider
 
 var rotation_x = 0.0
 var rotation_y := 0.0
@@ -38,6 +39,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	menu.process_mode = Node.PROCESS_MODE_ALWAYS
 	begin_footsteps()
+	sensitivity_slider.value = Settings.mouse_sensitivity
 
 func begin_footsteps():
 	var prev_max_volume = footsteps_sound.max_db
@@ -69,8 +71,8 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# if Input.is_action_just_pressed("player_jump") and is_on_floor():
-	# 	velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("player_jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
 	
 	if in_pee_area and not has_peed:
 		showMessage("pee_prompt", "Press 'E' to pee")
@@ -98,8 +100,9 @@ func _physics_process(delta: float) -> void:
 		bathroom_after_pee_exit()
 
 	var speed = BASE_SPEED
-	# if Input.is_action_pressed("player_sprint"):
-	# 	speed *= 5
+	if Input.is_action_pressed("player_sprint"):
+		speed *= SPRINT_MULTIPLIER
+
 	var input_dir := Input.get_vector("player_left", "player_right", "player_up", "player_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
@@ -121,8 +124,8 @@ func _physics_process(delta: float) -> void:
 func handle_mouse_motion(event: InputEventMouseMotion) -> void:
 	if not can_look:
 		return
-	rotate_camera_y(-event.relative.x * MOUSE_SENSITIVITY)
-	rotate_camera_x(-event.relative.y * MOUSE_SENSITIVITY)
+	rotate_camera_y(-event.relative.x * Settings.mouse_sensitivity)
+	rotate_camera_x(-event.relative.y * Settings.mouse_sensitivity)
 
 func rotate_camera_x(angle: float) -> void:
 	var new_rotation_x = clamp(
@@ -317,3 +320,8 @@ func _on_resume_game_pressed() -> void:
 func _on_back_to_menu_pressed() -> void:
 	toggle_pause()
 	go_to_menu()
+
+
+func _on_sensitivity_slider_value_changed(value: float) -> void:
+	Settings.mouse_sensitivity = value
+	Settings.save_settings()
